@@ -1,0 +1,234 @@
+.distances-page {
+  //&:before {
+  //  @include pseudo();
+  //  width: 100%;
+  //  height: 800px;
+  //  background-image: linear-gradient(to bottom, $dark-bg, transparent);
+  //  z-index: 0;
+  //}
+  &__head {
+    padding-top: 140px;
+    margin-bottom: 200px;
+  }
+}
+
+.distances-page-item {
+  $parent: &;
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 250px;
+
+  &:first-child {
+    #{$parent}__bg {
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  &_violet {
+    #{$parent}__bg {
+      background-image: url("../img/dp-bg-rotonda.jpg");
+    }
+
+    #{$parent}__length {
+      @include text-gradient($background: linear-gradient(90deg, #7f00ff, #e100ff), $color: #7f00ff);
+    }
+  }
+
+  &_green {
+    #{$parent}__bg {
+      background-image: url("../img/dp-bg-tropa.jpg");
+    }
+
+    #{$parent}__length {
+      @include text-gradient($background: linear-gradient(90deg, #00bcd0, #64c062), $color: #64c0a7);
+    }
+  }
+
+  &_orange {
+    #{$parent}__bg {
+      background-image: url("../img/dp-bg-fire_bird.jpg");
+    }
+
+    #{$parent}__length {
+      @include text-gradient($background: linear-gradient(90deg, #ff9966, #ff5e62), $color: #ff5e62);
+    }
+  }
+
+  &_yellow {
+    #{$parent}__bg {
+      background-image: url("../img/dp-bg-bobur.jpg");
+    }
+
+    #{$parent}__length {
+      @include text-gradient($background: linear-gradient(90deg, #fceabb, #f8b500), $color: #f8b500);
+    }
+  }
+
+  &_blue {
+    #{$parent}__bg {
+      background-image: url("../img/dp-bg-lenivets.jpg");
+    }
+
+    #{$parent}__length {
+      @include text-gradient($background: linear-gradient(90deg, #1fa2ff, #12d8fa), $color: #12d8fa);
+    }
+  }
+
+  &_pink {
+    #{$parent}__bg {
+      background-image: url("../img/dp-bg-kids.jpg");
+    }
+
+    #{$parent}__length {
+      @include text-gradient($background: linear-gradient(90deg, #fb4e78, #f7666d), $color: #f7666d);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:before,
+    &:after {
+      @include pseudo();
+      width: 100%;
+      height: 400px;
+      z-index: 0;
+    }
+
+    &:before {
+      background-image: linear-gradient(to bottom, $dark-bg, transparent);
+      top: 0;
+    }
+
+    &:after {
+      background-image: linear-gradient(to top, $dark-bg, transparent);
+      bottom: 0;
+    }
+  }
+
+  &__title {
+    text-transform: capitalize;
+  }
+
+  &__track {
+    display: block;
+    height: 680px;
+    line-height: 680px;
+    text-align: center;
+  }
+
+  &__track-wrap {
+    height: 800px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &__track-img {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  &__length {
+    display: inline-block;
+    font-family: $font-family-bold;
+    font-size: 60px;
+    line-height: 1;
+    margin-bottom: 75px;
+  }
+
+  &__info {
+    position: relative;
+    font-size: 24px;
+    line-height: 1.3;
+    max-width: 440px;
+    padding: 20px 0 20px 50px;
+    margin-bottom: 35px;
+
+    &:before {
+      @include pseudo();
+      width: 50px;
+      height: 100%;
+      top: 0;
+      left: -15px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &:last-child {
+      margin-bottom: 60px;
+    }
+
+    &_itra {
+      &:before {
+        background-image: url("../img/itra.svg");
+      }
+    }
+
+    &_time {
+      &:before {
+        background-image: url("../img/analog_stopwatch.svg");
+      }
+    }
+
+    &_drink {
+      &:before {
+        background-image: url("../img/water_bottle.svg");
+      }
+    }
+
+    &_food {
+      &:before {
+        background-image: url("../img/hot food.svg");
+      }
+    }
+
+    &_area {
+      &:before {
+        background-image: url("../img/forest.svg");
+      }
+    }
+  }
+
+  &__price {
+    font-family: $font-family-bold;
+    font-size: 65px;
+    line-height: 1;
+  }
+
+  &__price-wrap {
+    margin-bottom: 20px;
+  }
+
+  &__price-note {
+    font-size: 18px;
+    line-height: 1;
+    opacity: 0.85;
+  }
+
+  &__about {
+    font-size: 24px;
+    line-height: 1.4;
+    padding-top: 95px;
+  }
+}
+
+//TODO добавить адаптив

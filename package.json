@@ -1,0 +1,29 @@
+{
+  "name": "sm-trail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.5.6",
+    "bootstrap": "^4.3.0",
+    "jquery": "^3.3.1",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
+    "popper.js": "^1.0.1",
+    "scroll-parallax": "^3.0.3",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redreams/sm-trail.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/redreams/sm-trail/issues"
+  },
+  "homepage": "https://github.com/redreams/sm-trail#readme"
+}

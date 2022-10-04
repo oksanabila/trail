@@ -1,0 +1,223 @@
+.how-to-get {
+  padding-bottom: 150px;
+
+  &__head {
+    margin-bottom: 80px;
+  }
+
+  &__dropdown-title {
+    display: inline-block;
+    font-family: $font-family-bold;
+    font-size: 21px;
+    color: $gray;
+    margin-right: 40px;
+  }
+
+  &__dropdown-wrap {
+    margin-bottom: 60px;
+
+    &_right {
+      text-align: right;
+    }
+  }
+
+  &__map-wrap {
+    border-radius: 10px;
+    border: 20px solid #21242a;
+  }
+
+  &__route-wrap {
+    padding: 50px;
+    background-color: #21242a;
+  }
+
+  &__route-head {
+    font-family: $font-family-bold;
+    font-size: 32px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+  }
+
+  &__route-text {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+}
+
+.tab-switch {
+  padding: 0;
+  margin-bottom: 50px;
+
+  &__link {
+    font-size: 21px;
+    line-height: 33px;
+    color: $light;
+    text-transform: uppercase;
+    padding: 0;
+    border: none;
+    border-top: 3px solid transparent;
+    margin-right: 30px;
+
+    &.active {
+      border-color: $purple;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.dropdown-button {
+  $parent: &;
+  display: inline-block;
+  width: auto;
+  position: relative;
+  margin: 0;
+
+  &.show {
+    & .dropdown-button__button {
+      outline: none;
+      color: $dark;
+      border-color: $purple;
+      background-color: $light;
+      border-bottom-color: transparent;
+
+      &:after {
+        background-image: url("../img/small-up.png");
+      }
+    }
+  }
+
+  &__button {
+    position: relative;
+    width: auto;
+    font-size: 21px;
+    color: $light;
+    border: 2px solid $light;
+    padding: 13px 70px 13px 20px;
+    margin: 0;
+    text-align: left;
+    background-color: $dark-bg;
+    white-space: normal;
+
+    &:hover {
+    }
+
+    &:after {
+      @include pseudo();
+      right: 0;
+      top: 0;
+      width: 35px;
+      height: 100%;
+      border: none;
+      background: url("../img/small-down.png") no-repeat center;
+    }
+
+    & .show {
+      color: $purple;
+      border-color: $purple;
+    }
+  }
+
+  &__wrap {
+    top: 90%;
+    min-width: unset;
+    width: 100%;
+    border: 2px solid $purple;
+    border-top: none;
+    border-radius: 0;
+    padding: 0 0 0 20px;
+  }
+
+  &__item {
+    font-size: 21px;
+    line-height: 1.6;
+    padding: 0 70px 13px 0;
+    white-space: normal;
+
+    &:hover, &:focus {
+      background-color: transparent;
+      color: $purple;
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .how-to-get {
+    &__dropdown-wrap {
+      margin-bottom: 20px;
+
+      &_right {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .tab-switch {
+    margin-bottom: 15px;
+  }
+  .how-to-get {
+    &__route-head {
+      font-size: 35px;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .how-to-get {
+    padding-bottom: 0;
+
+    &__dropdown-title {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    &__map-wrap {
+      border-width: 10px;
+    }
+
+    &-tab {
+      margin-top: 20px;
+    }
+
+    &__route-wrap {
+      padding: 30px;
+    }
+
+    &__route-head {
+      font-size: 24px;
+      line-height: 1.2;
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .how-to-get {
+    &__head {
+      margin-bottom: 30px;
+    }
+
+    &__dropdown-title {
+      font-size: 20px;
+    }
+  }
+  .tab-switch {
+    &__link {
+      font-size: 16px;
+    }
+  }
+  .dropdown-button {
+    $parent: &;
+
+    &__button,
+    &__item {
+      font-size: 18px;
+      padding-right: 40px;
+    }
+  }
+}
+
+
