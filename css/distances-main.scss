@@ -1,0 +1,507 @@
+.distances {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding-bottom: 200px;
+
+  &__head-wrap {
+    position: relative;
+    padding-top: 170px;
+    margin-bottom: 270px;
+    z-index: 1;
+
+    &:before {
+      @include pseudo();
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 480px;
+      background: url("../img/distances-hedline.png") no-repeat center;
+      background-size: contain;
+      z-index: -1;
+    }
+  }
+
+  &__head {
+    z-index: 1;
+  }
+
+  &__head-bg {
+    position: absolute;
+    top: 0;
+  }
+
+  &__wrap {
+    background: url("../img/path.png") no-repeat;
+    background-size: auto;
+    background-position-x: 265px;
+    background-position-y: -225px;
+  }
+}
+
+.distances-item {
+  $parent: &;
+  display: block;
+  position: relative;
+  background-color: $dark-bg-2;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 280px;
+  padding-left: 230px;
+  border-radius: 10px;
+  margin-bottom: 59px;
+  @include transition(1s ease-out 0s);
+
+  &:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+
+    #{$parent}__photo {
+      width: 250px;
+    }
+
+    #{$parent}__title {
+      text-decoration: none;
+    }
+  }
+
+  &:before {
+    @include pseudo();
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    right: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right top;
+    overflow: hidden;
+  }
+
+  &_violet {
+    background-image: url("../img/10-bg.png");
+    background-position: 120% -24px;
+
+    &:hover {
+      box-shadow: 0 0 24px #e100ff;
+
+      #{$parent}__title {
+        color: #e100ff;
+        border-color: #e100ff;
+      }
+    }
+
+    &:before {
+      background-image: url("../img/path-10.png");
+    }
+
+    #{$parent}__length {
+      @include text-gradient($background: linear-gradient(90deg, #7f00ff, #e100ff), $color: #7f00ff);
+    }
+
+    #{$parent}__photo {
+      &:before {
+        background: linear-gradient(133deg, #7f00ff, #e100ff);
+      }
+    }
+  }
+
+  &_green {
+    background-image: url("../img/35-bg.png");
+    background-position: 120% -24px;
+
+    &:hover {
+      box-shadow: 0 0 24px #64c062;
+
+      #{$parent}__title {
+        color: #64c062;
+        border-color: #64c062;
+      }
+    }
+
+    &:before {
+      background-image: url("../img/35-path.png");
+    }
+
+    &:after {
+      @include pseudo();
+      width: 300px;
+      height: 360px;
+      top: 0;
+      right: -124px;
+      background: url("../img/35-branch.png") no-repeat top right;
+      background-size: contain;
+    }
+
+    #{$parent}__length {
+      @include text-gradient($background: linear-gradient(90deg, #00bcd0, #64c062), $color: #64c0a7);
+    }
+
+    #{$parent}__photo {
+      &:before {
+        background: linear-gradient(133deg, #00bcd0, #64c062);
+      }
+    }
+  }
+
+  &_orange {
+    background-image: url("../img/56-bg.png");
+    background-position: 120% -24px;
+
+    &:hover {
+      box-shadow: 0 0 24px #ff9966;
+
+      #{$parent}__title {
+        color: #ff5e62;
+        border-color: #ff5e62;
+      }
+    }
+
+    &:before {
+      background-image: url("../img/56-path.png");
+      background-size: auto;
+      background-position: 9px -2px;
+    }
+
+    #{$parent}__length {
+      @include text-gradient($background: linear-gradient(90deg, #ff9966, #ff5e62), $color: #ff5e62);
+    }
+
+    #{$parent}__photo {
+      &:before {
+        background: linear-gradient(133deg, #ff9966, #ff5e62);
+      }
+    }
+  }
+
+  &_yellow {
+    background-image: url("../img/106-bg.png");
+    background-position: 120% -24px;
+
+    &:hover {
+      box-shadow: 0 0 24px #fceabb;
+
+      #{$parent}__title {
+        color: #f8b500;
+        border-color: #f8b500;
+      }
+    }
+
+    &:before {
+      background-image: url("../img/106-path.png");
+      background-position: left center;
+      right: 74px;
+    }
+
+    #{$parent}__length {
+      @include text-gradient($background: linear-gradient(90deg, #fceabb, #f8b500), $color: #f8b500);
+    }
+
+    #{$parent}__photo {
+      &:before {
+        background: linear-gradient(133deg, #fceabb, #f8b500);
+      }
+    }
+  }
+
+  &_blue {
+    background-image: url("../img/160-bg.png");
+    background-position: 120% -24px;
+
+    &:hover {
+      box-shadow: 0 0 24px #12d8fa;
+
+      #{$parent}__title {
+        color: #1fa2ff;
+        border-color: #1fa2ff;
+      }
+    }
+
+    &:before {
+      background-image: url("../img/160-path.png");
+      background-position: right center;
+    }
+
+    &:after {
+      @include pseudo();
+      width: 300px;
+      height: 210px;
+      top: -200px;
+      left: -124px;
+      background: url(../img/dandelion.png) no-repeat center;
+      background-size: contain;
+      z-index: -1;
+    }
+
+    #{$parent}__length {
+      @include text-gradient($background: linear-gradient(90deg, #1fa2ff, #12d8fa), $color: #12d8fa);
+    }
+
+    #{$parent}__photo {
+      &:before {
+        background: linear-gradient(133deg, #1fa2ff, #12d8fa);
+      }
+    }
+  }
+
+  &_pink {
+    background-image: url("../img/500m-bg.png");
+    background-position: 120% -24px;
+
+    &:hover {
+      box-shadow: 0 0 24px #f7666d;
+
+      #{$parent}__title {
+        color: #fb4e78;
+        border-color: #fb4e78;
+      }
+    }
+
+    &:before {
+      background-image: url("../img/500m-path.png");
+      background-position: 38px top;
+    }
+
+    #{$parent}__length {
+      @include text-gradient($background: linear-gradient(90deg, #fb4e78, #f7666d), $color: #f7666d);
+    }
+
+    #{$parent}__photo {
+      &:before {
+        background: linear-gradient(133deg, #fb4e78, #f7666d);
+      }
+    }
+  }
+
+  &__length {
+    display: inline-block;
+    font-family: $font-family-bold;
+    font-size: 60px;
+    line-height: 1;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 90px;
+  }
+
+  &__title {
+    display: inline;
+    font-size: 36px;
+    line-height: 1.2;
+    margin-right: 70px;
+    color: $light;
+    border-bottom: 1px solid transparent;
+
+  }
+
+  &__photo {
+    @include transition(1s ease-out 0s);
+    width: 190px;
+    position: absolute;
+    top: -14px;
+    bottom: -14px;
+    right: 100%;
+    margin-right: -190px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+
+    &:before {
+      @include pseudo();
+      right: -1px;
+      left: -1px;
+      height: 100%;
+      opacity: 0.4;
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .distances {
+    &__wrap {
+      padding: 0 20px;
+      background: none;
+    }
+  }
+  .distances-item {
+    $parent: &;
+    margin-bottom: 90px;
+    padding-left: 120px;
+
+    &_green,
+    &_blue {
+      &:after {
+        content: none;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.05);
+
+      #{$parent}__photo {
+        width: 200px;
+      }
+    }
+
+    &:before {
+      width: 60%;
+    }
+
+    &_yellow {
+      &:before {
+        right: 0;
+      }
+    }
+
+    &__photo {
+      margin-right: -100px;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .distances-item {
+    $parent: &;
+    padding-left: 270px;
+    margin-left: 10px;
+
+    &_green,
+    &_orange,
+    &_blue,
+    &_pink {
+      &:before {
+        right: 80px;
+      }
+    }
+
+    &:hover {
+      #{$parent}__photo {
+        width: 250px;
+      }
+    }
+
+    &:before {
+      width: 44%;
+    }
+
+    &__photo {
+      width: 230px;
+      margin-right: 0;
+      left: -10px;
+      right: unset;
+    }
+
+    &__title {
+      margin-right: 120px;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .distances {
+    &__head-wrap {
+      padding-top: 50px;
+      margin-bottom: 180px;
+
+      &:before {
+        height: 200px;
+      }
+    }
+  }
+  .distances-item {
+    $parent: &;
+    margin-left: 0;
+
+    &_violet:before {
+      width: 60%;
+      background-position: 132px top;
+    }
+
+    &_green:before {
+      width: 50%;
+      right: 0;
+    }
+
+    &_orange:before {
+      width: 33%;
+      background-size: cover;
+      right: 0;
+    }
+
+    &_yellow:before {
+      width: 50%;
+      background-size: cover;
+      right: 0;
+    }
+
+    &_blue:before {
+      background-position: 90px center;
+      right: 0;
+    }
+
+    &_pink:before {
+      right: 0;
+    }
+
+    &__length {
+      font-size: 42px;
+      margin-top: 35px;
+    }
+
+    &__title {
+      font-size: 30px;
+      margin-right: 60px;
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .distances {
+    padding-bottom: 0;
+
+    &__head-wrap {
+      &:before {
+        height: 160px;
+      }
+    }
+  }
+  .distances-item {
+    $parent: &;
+    padding-left: 100px;
+    padding-bottom: 30px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+    height: auto;
+
+    &:hover {
+      transform: scale(1.05);
+
+      #{$parent}__photo {
+        width: 120px;
+      }
+    }
+
+    &:before {
+      content: none;
+    }
+
+    &__length {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    &__title {
+      font-size: 18px;
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+
+    &__photo {
+      width: 120px;
+      left: -30px;
+      top: -10px;
+      bottom: -10px;
+    }
+  }
+}

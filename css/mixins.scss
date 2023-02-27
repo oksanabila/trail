@@ -1,0 +1,52 @@
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin absolute($top: 0, $bottom: 0, $right: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+}
+
+@mixin text-gradient($background, $color) {
+  background: $background;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: $color;
+}
+
+@mixin border-gradient($border-image) {
+  -moz-border-image: $border-image;
+  -webkit-border-image: $border-image;
+  border-image: $border-image;
+}
+
+@mixin transition($transition) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+
+@mixin skewX($skewX: skewX(5deg)) {
+  -webkit-transform: $skewX;
+  -moz-transform: $skewX;
+  -ms-transform: $skewX;
+  -o-transform: $skewX;
+  transform: $skewX;
+}

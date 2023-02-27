@@ -1,0 +1,96 @@
+.photo-video {
+  position: relative;
+  padding-top: 300px;
+  padding-bottom: 180px;
+  overflow: hidden;
+
+  &__bg {
+    @include absolute();
+    background: url("../img/bg-photo-video.png") no-repeat center top;
+    background-size: cover;
+  }
+
+  &__head {
+    margin-bottom: 200px;
+  }
+}
+
+.photo-video-item {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &_small {
+    height: 260px;
+  }
+
+  &_big,
+  &_vertical {
+    height: 550px;
+  }
+
+  &_vertical {
+    &_margin {
+      margin-top: -290px;
+    }
+  }
+
+  &_video {
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .photo-video {
+    padding-top: 110px;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .photo-video {
+    &__head {
+      margin-bottom: 165px;
+    }
+  }
+  .photo-video-item {
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+
+    &_small {
+      height: 350px;
+    }
+
+    &_vertical {
+      &_margin {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .photo-video {
+    padding-top: 200px;
+
+    &__head {
+      margin-bottom: 165px;
+    }
+  }
+  .photo-video-item {
+    &_vertical,
+    &_small,
+    &_big {
+      height: 350px;
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .photo-video {
+    &__head {
+      margin-bottom: 80px;
+    }
+  }
+}
